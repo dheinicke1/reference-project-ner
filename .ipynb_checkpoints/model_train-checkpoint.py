@@ -195,12 +195,10 @@ def main(args):
     
     history = ner_model.fit(X_train, y_train, batch_size=args.batch_size, epochs=args.max_epochs, verbose=args.verbose)
     
-#     print(history.history['crf_accuracy'])
-
     import json
     
     #Code to write model accuracy to dominostats value for population in experiment manager
-    with open('dominostats.json', 'w') as f:
+    with open('atrifacts/dominostats.json', 'w') as f:
         f.write(json.dumps({"crf_accuracy": str(np.round(history.history['crf_accuracy'], 3)[0])}))
     
     if args.plot:
