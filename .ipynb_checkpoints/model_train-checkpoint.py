@@ -198,7 +198,7 @@ def main(args):
     import json
     
     #Code to write model accuracy to dominostats value for population in experiment manager
-    with open('atrifacts/dominostats.json', 'w') as f:
+    with open('/atrifacts/dominostats.json', 'w') as f:
         f.write(json.dumps({"crf_accuracy": str(np.round(history.history['crf_accuracy'], 3)[0])}))
     
     if args.plot:
